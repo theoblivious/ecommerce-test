@@ -1,35 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Items</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th>Item</th>
-      <th>Item image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<h4 class="column">The Items</h4>
+<div class="column">
+  <ul class="items-grid no-bullet row">
     <% @items.each do |item| %>
-      <tr>
-        <td><%= item.title %></td>
-        <td><%= item.price %></td>
-        <td><%= item.description %></td>
-        <td><%= item.item_id %></td>
-        <td><%= item.item_image %></td>
-        <td><%= link_to 'Show', item %></td>
-   
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <li class="large-3 medium-4 small-12 column">
+        <div class="item-card padly">
+          <%= link_to item, class: "poster" do %>
+            <%= image_tag item.itemimage %>
+          <% end %>
+          <div class="item-info ell glassy-bg padmy padlx">
+            <div class="title">
+              <h6><%= item.title %> </h6>
+            </div>
+            <p class="left price label movie-label radius">$ <%= item.price %></p>
+            <%= link_to item.infopage, class: "right" do %>
+              <%= image_tag asset_path("colehaan.jpg") %>
+            <% end %>
+          </div>
+        </div>
+      </li>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-
+  </ul>
+</div>

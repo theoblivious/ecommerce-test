@@ -1,29 +1,15 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @item.title %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @item.price %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
-
-<p>
-  <strong>Item:</strong>
-  <%= @item.item_id %>
-</p>
-
-<p>
-  <strong>Item image:</strong>
-  <%= @item.item_image %>
-</p>
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<div class="large-3 small-12 column">
+  <%=image_tag @item.itemimage%>
+</div>
+ 
+<div class="large-9 small-12 column">
+  <h3>
+    <%= @item.title %>
+    <%=link_to @item.infopage do%>
+      <%=image_tag asset_path("colehaan.jpg")%>
+    <%end%>
+  </h3>
+  <p class="label movie-label radius mb1">$ <%= @item.price %></p>
+ 
+  <p><%= @item.description %></p>
+</div>

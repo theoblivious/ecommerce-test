@@ -11,7 +11,16 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    @item = Item.find(params[:id])
+    @cart_action = @item.cart_action current_user.try :id
   end
 
+
+private
+
+def set_item
+  @item = Item.find(params[:id])
 end
+
+end
+
+

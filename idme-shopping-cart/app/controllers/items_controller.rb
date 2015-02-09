@@ -12,10 +12,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @cart_action = @item.cart_action current_user.try :id
   end
-
-
-
-
 end
 
 

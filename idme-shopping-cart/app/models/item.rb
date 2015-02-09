@@ -2,7 +2,7 @@ class Item < ActiveRecord::Base
 
 
 	def infopage
-	"http://www.colehaan.com/#{item_id}"
+	"http://www.colehaan.com/#{item_profile}"
 	end
 
 	def itemimage

@@ -7,7 +7,6 @@ class Item < ActiveRecord::Base
 
 	def itemimage
 		"http://demandware.edgesuite.net/#{item_image}"
-	
 	end
 
 	def cart_action(current_user_id)
@@ -17,6 +16,6 @@ class Item < ActiveRecord::Base
 			"Add to"
 		end
 	end
-	
+
 end
 

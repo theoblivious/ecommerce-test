@@ -1,5 +1,5 @@
 <%if signed_in?%>
-  <%=link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@movie), removeUrl: remove_from_cart_path(@movie)} do%>
+  <%=link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@item), removeUrl: remove_from_cart_path(@item)} do%>
     <i class="fi-shopping-cart"></i>
     <span><%=@cart_action%></span> Cart
   <%end%>

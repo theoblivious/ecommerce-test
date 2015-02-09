@@ -36,9 +36,12 @@ gem 'foundation-rails'
 gem 'devise'
 
 gem 'redis', '~> 3.0.1'
+# gem "redis", ">= 2.2.0", :require => ["redis", "redis/connection/hiredis"]
 gem 'hiredis', '~> 0.4.5'
 
 group :development, :test do
+  gem 'pry-rails'
+  gem 'awesome_print'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 

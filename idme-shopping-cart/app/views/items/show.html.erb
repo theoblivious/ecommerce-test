@@ -8,14 +8,17 @@
       <%=image_tag asset_path("colehaan.jpg")%>
     <%end%>
   </h3>
-  <p class="label movie-label radius mb1">$ <%= @item.price %></p>
+  <p class="label item-label radius mb1">$ <%= @item.price %></p>
 
   <p><%= @item.description %></p>
 
+
   <%if signed_in?%>
-    <%=link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@item), removeUrl: remove_from_cart_path(@item)} do%>
+    <%=link_to "Add to Cart", add_to_cart_path(@item), class: "button", method: :put %>
+
+    <% # TODO: Fix this JavaScript issues: link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@item), removeUrl: remove_from_cart_path(@item)} do%>
       <i class="fi-shopping-cart"></i>
       <span><%=@cart_action%></span> Cart
-    <%end%>
+    <% # close do for javascript link %end%>
   <%end%>
 </div>

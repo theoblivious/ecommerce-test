@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'csv'
 CSV.foreach(Rails.root.join("db/seeds_data/shoes.csv"), headers: true) do |row|
-  Item.find_or_create_by(title: row[0], price: row[1], description: row[2], item_id: row[3], item_image: row[4])
+  Item.find_or_create_by(title: row[0], price: row[1], description: row[2], item_profile: row[3], item_image: row[4])
 end
